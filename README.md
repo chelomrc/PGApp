@@ -14,7 +14,7 @@ Angular 11
 
 # General Info
 
-- The application load the information of the subscribers from a REST API
+- The application load the information of the subscribers from a API
 - List the subscribers
 - Pagination of subscribers, (10, 20, 50, 100 or all subscribers can be showed per page)
 - Edit users

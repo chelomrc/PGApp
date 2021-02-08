@@ -1,0 +1,75 @@
+<div>
+
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1 *ngIf="isNewSubscriber"class="display-4">Add New User</h1>
+        <h1 *ngIf="!isNewSubscriber"class="display-4">Edit User</h1>
+        <hr class="my-4">
+        <form 
+            class="row gx-3 gy-2 align-items-center" 
+            [formGroup]="subscriberForm"
+            (submit)="sendForm()"
+        >
+            <div class="col">
+              <label class="" for="specificSizeInputName">SubscriberID</label>
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input 
+                    *ngIf="isNewSubscriber"
+                    type="text" class="form-control" 
+                    id="specificSizeInputGroupUsername" 
+                    placeholder="SubscriberID"
+                    formControlName="SubscriberID"                    
+                >
+                <input 
+                    *ngIf="!isNewSubscriber"
+                    type="text" class="form-control" 
+                    id="specificSizeInputGroupUsername" 
+                    placeholder="SubscriberID"
+                    formControlName="SubscriberID"
+                    readonly
+                >
+                </div>
+            </div>
+            <div class="col">
+                <label class="" for="specificSizeInputGroupUsername">UsageBytes</label>
+                <input 
+                type="text" class="form-control" 
+                id="specificSizeInputName" 
+                placeholder="UsageBytes"
+                formControlName="UsageBytes"
+                >
+            </div>
+            <div class="col">
+              <label class="" for="specificSizeSelect">Status</label>
+              <select 
+                class="form-select" 
+                id="specificSizeSelect"
+                formControlName="Status"
+              >
+                <option value=""selected>Select status...</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="suspended">Suspended</option>
+                <option value="preactive">Preactive</option>
+              </select>
+            </div>
+
+            <div>
+                <button 
+                    *ngIf="isNewSubscriber"
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="subscriberForm.invalid"
+                > Create User </button>
+                <button 
+                    *ngIf="!isNewSubscriber"
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="subscriberForm.invalid"
+                > Update </button>
+            </div>
+          </form>
+      </div>
+
+
+</div>

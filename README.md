@@ -3,12 +3,12 @@
 This an application that record and show data from subscribers status and usage.
 
 ## Installation
-
+```
 $ git clone https://github.com/chelomrc/PGApp.git
 $ cd PGApp
 $ npm install
 $ npm start
-
+```
 # Technologies
 Angular 11
 
